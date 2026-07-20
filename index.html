@@ -160,7 +160,7 @@
       <img class="logo" src="https://www.ekcuae.com/wp-content/uploads/logo.png" alt="EKC logo" onerror="this.style.display='none';">
       <div>
         <div style="display:flex;align-items:baseline;gap:12px;">
-          <h1>AI Resume Screening Desk </h1>
+          <h1>AI Resume  Desk </h1>
           <span class="docket">ROSHAN</span>
         </div>
         <div class="subtitle">Set what the role requires. See who clears the bar — and why.</div>
@@ -711,7 +711,7 @@
     ws['!cols'] = [ {wch:22},{wch:26},{wch:14},{wch:10},{wch:12},{wch:11},{wch:16},{wch:22},{wch:36},{wch:36} ];
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, job.title.slice(0,28) || 'Candidates');
-    const fname = `${job.title.replace(/[^\w\- ]+/g,'').trim() || 'screening'}-candidates.xlsx`;
+    const fname = `${job.title.replace(/[^\w\- ]+/g,'').trim() || 'EKC_screening'}-candidates.xlsx`;
     XLSX.writeFile(wb, fname);
     showToast('Excel file downloaded');
   });
@@ -723,7 +723,7 @@
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF({ orientation: 'landscape' });
     doc.setFontSize(14);
-    doc.text(`Screening Desk — ${job.title}`, 14, 16);
+    doc.text(`EKC Screening Desk — ${job.title}`, 14, 16);
     doc.setFontSize(9);
     doc.setTextColor(120);
     doc.text(`Requirement: ${job.keywords.join(', ')} | Min. experience: ${job.minExp || 'Any'} yrs | Min. education: ${EDU_LEVELS[job.minEdu] || 'Any'}`, 14, 22);
@@ -735,7 +735,7 @@
       headStyles: { fillColor: [46,42,38] },
       columnStyles: { 8:{cellWidth:45}, 9:{cellWidth:45} },
     });
-    const fname = `${job.title.replace(/[^\w\- ]+/g,'').trim() || 'screening'}-candidates.pdf`;
+    const fname = `${job.title.replace(/[^\w\- ]+/g,'').trim() || 'EKC_screening'}-candidates.pdf`;
     doc.save(fname);
     showToast('PDF file downloaded');
   });
